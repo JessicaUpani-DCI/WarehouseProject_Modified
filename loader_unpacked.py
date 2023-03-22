@@ -63,11 +63,9 @@ class Loader:
         Employee2 = self.__load_class("Employee")
 
         for i in employees:
-            print(i)
             if 'head_of' not in i:
                 self.Employee_Unpacked.append(Employee2(i['user_name'], i['password']))
             else:
-                print(i)
                 self.Employee_Unpacked.append(Employee2(i['user_name'], i['password']))
                 for j in i['head_of']:
                     self.Employee_Unpacked.append(Employee2(j['user_name'], j['password']))
