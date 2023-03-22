@@ -68,7 +68,17 @@ class Loader:
             else:
                 self.Employee_Unpacked.append(Employee2(i['user_name'], i['password']))
                 for j in i['head_of']:
-                    self.Employee_Unpacked.append(Employee2(j['user_name'], j['password']))
+                    if 'head_of' not in j:
+                        self.Employee_Unpacked.append(Employee2(j['user_name'], j['password']))
+                    else:
+                        self.Employee_Unpacked.append(Employee2(j['user_name'], j['password']))
+                        for k in j['head_of']:
+                            if 'head_of' not in k:
+                                self.Employee_Unpacked.append(Employee2(k['user_name'], k['password']))
+                            else:
+                                self.Employee_Unpacked.append(Employee2(k['user_name'], k['password']))
+                                for t in k['head_of']:
+                                    self.Employee_Unpacked.append(Employee2(t['user_name'], t['password']))
 
     
     def __parse_stock(self):
