@@ -70,7 +70,7 @@ class Loader:
                 print(i)
                 self.Employee_Unpacked.append(Employee2(i['user_name'], i['password']))
                 for j in i['head_of']:
-                    self.Employee_Unpacked.append(Employee2(i['user_name'], i['password']))
+                    self.Employee_Unpacked.append(Employee2(j['user_name'], j['password']))
 
     
     def __parse_stock(self):
